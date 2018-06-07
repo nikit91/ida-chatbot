@@ -89,7 +89,7 @@ import { BargraphViewComponent } from './components/bargraph-view/bargraph-view.
     MatToolbarModule,
     MatTooltipModule,
   ],
-  declarations: [SidebarComponent, DataViewContainerComponent, DatatableViewComponent, FdgViewComponent, BargraphViewComponent]
+  declarations: []
 })
 export class DemoMaterialModule {}
 @NgModule({
@@ -98,7 +98,12 @@ export class DemoMaterialModule {}
     MessageListComponent,
     MessageItemComponent,
     MessageFormComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    SidebarComponent,
+    DataViewContainerComponent,
+    DatatableViewComponent,
+    FdgViewComponent,
+    BargraphViewComponent
   ],
   imports: [
     BrowserModule,
