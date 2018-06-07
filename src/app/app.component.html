@@ -1,6 +1,31 @@
 <div fxLayout="row">
-  <div fxFlex="60%"></div>
-  <app-chatbox fxFlex ></app-chatbox>
+  <!--<div fxFlex="10%" style="background-color:#eaeaea; overflow: auto;">-->
+    <mat-list fxFlex="nogrow" style="background-color:#eaeaea; overflow: auto;" fxLayout="column" fxLayoutGap="0">
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-button>City</button>
+        <!--<button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>-->
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>Panama</button>
+        <mat-divider></mat-divider>
+      </mat-list-item >
+      <mat-list-item>
+        <button mat-button>QA</button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+ <!-- </div>-->
+  <div fxFlex>
+    <mat-tab-group>
+      <mat-tab label="Tab 1">Content 1</mat-tab>
+      <mat-tab label="Tab 2">Content 2</mat-tab>
+    </mat-tab-group>
+  </div>
+  <app-chatbox fxFlex="nogrow" ></app-chatbox>
   <!--<app-message-list fxFlex [messages]="this.getMessages()"></app-message-list>-->
 </div>
 

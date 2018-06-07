@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Message} from '../../models/message';
 
 @Component({
@@ -14,8 +14,17 @@ export class MessageFormComponent implements OnInit {
   }
 
   sendMessage(msg: string) {
+    if (msg == null || !msg) {
+      return false;
+    }
     const curTime = new Date();
     const message = new Message(msg, 'User', 'user', curTime);
     this.msgemitter.emit(message);
   }
+
+  /*keyDownFunction(event, btn) {
+    if (event.keyCode === 13) {
+      btn._elementRef.nativeElement.click();
+    }
+  }*/
 }

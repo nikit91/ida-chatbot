@@ -47,6 +47,11 @@ import {
 } from '@angular/material';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DataViewContainerComponent } from './components/data-view-container/data-view-container.component';
+import { DatatableViewComponent } from './components/datatable-view/datatable-view.component';
+import { FdgViewComponent } from './components/fdg-view/fdg-view.component';
+import { BargraphViewComponent } from './components/bargraph-view/bargraph-view.component';
 
 @NgModule({
   exports: [
@@ -83,7 +88,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-  ]
+  ],
+  declarations: [SidebarComponent, DataViewContainerComponent, DatatableViewComponent, FdgViewComponent, BargraphViewComponent]
 })
 export class DemoMaterialModule {}
 @NgModule({

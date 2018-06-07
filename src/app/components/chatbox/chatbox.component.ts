@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Message} from '../../models/message';
 
 @Component({
@@ -6,7 +6,8 @@ import {Message} from '../../models/message';
   templateUrl: './chatbox.component.html',
   styleUrls: ['./chatbox.component.css']
 })
-export class ChatboxComponent implements OnInit {
+export class ChatboxComponent implements OnInit, AfterViewChecked  {
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
   curDate = new Date();
   msg1: Message = new Message('Hello there! How can I help you?', 'Assistant' , 'chatbot' , this.curDate );
   msg2: Message = new Message('Hi! Could you please load the City dataset.', 'User' , 'user' , this.curDate );
@@ -18,6 +19,11 @@ export class ChatboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.scrollToBottom();
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
   }
 
   getMessages(): Message[] {
@@ -25,6 +31,12 @@ export class ChatboxComponent implements OnInit {
   }
   addNewMessage(message: Message) {
     this.messages.push(message);
+  }
+
+  scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
   }
 
 }
